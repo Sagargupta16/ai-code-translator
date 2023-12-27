@@ -18,6 +18,8 @@
       "@/*": ["./*"]
     }
   },
+  // also Include codemirror-legacy-modes.d.ts from types folder
+
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
 }
