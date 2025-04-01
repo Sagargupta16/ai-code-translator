@@ -13,7 +13,7 @@
     "@uiw/codemirror-theme-tokyo-night": "^4.19.11",
     "@uiw/react-codemirror": "^4.19.11",
     "endent": "^2.1.0",
-    "eventsource-parser": "^2.0.0",
+    "eventsource-parser": "^3.0.0",
     "next": "14.2.25",
     "react": "19.1.0",
     "react-dom": "19.1.0"
