@@ -15,13 +15,13 @@
     "endent": "^2.1.0",
     "eventsource-parser": "^2.0.0",
     "next": "14.2.10",
-    "react": "18.3.1",
-    "react-dom": "18.3.1"
+    "react": "19.1.0",
+    "react-dom": "19.1.0"
   },
   "devDependencies": {
     "@types/node": "22.13.16",
-    "@types/react": "18.3.11",
-    "@types/react-dom": "18.3.1",
+    "@types/react": "19.0.12",
+    "@types/react-dom": "19.0.4",
     "autoprefixer": "^10.4.14",
     "eslint": "9.10.0",
     "eslint-config-next": "14.2.4",
