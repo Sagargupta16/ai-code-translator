@@ -15,8 +15,8 @@
     "endent": "^2.1.0",
     "eventsource-parser": "^3.0.0",
     "next": "16.0.0",
-    "react": "19.1.0",
-    "react-dom": "19.1.0"
+    "react": "19.2.0",
+    "react-dom": "19.2.0"
   },
   "devDependencies": {
     "@types/node": "20.19.23",
