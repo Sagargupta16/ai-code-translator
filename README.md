@@ -1,29 +1,57 @@
 # AI Code Translator
 
-Use AI to translate code from one language to another.
+An AI-powered code translation tool that converts code between programming languages using OpenAI's API. Built with Next.js and TypeScript.
+
+Originally forked from [mckaywrigley/ai-code-translator](https://github.com/mckaywrigley/ai-code-translator).
 
 ![AI Code Translator](./public/screenshot.png)
 
-## Running Locally
+## Features
 
-**1. Clone Repo**
+- Translate code between 50+ programming languages
+- Syntax highlighting with CodeMirror
+- Real-time streaming translation
+- Clean, responsive UI with Tailwind CSS
 
-```bash
-git clone https://github.com/mckaywrigley/ai-code-translator.git
-```
+## Tech Stack
 
-**2. Install Dependencies**
+- Next.js
+- TypeScript
+- OpenAI API
+- CodeMirror
+- Tailwind CSS
 
-```bash
-npm i
-```
+## Getting Started
 
-**3. Run App**
+1. Clone the repo:
+   ```bash
+   git clone https://github.com/Sagargupta16/ai-code-translator.git
+   cd ai-code-translator
+   ```
 
-```bash
-npm run dev
-```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-## Contact
+3. Set up environment variables:
+   ```bash
+   cp .env.local.example .env.local
+   ```
+   Add your OpenAI API key to `.env.local`.
 
-If you have any questions, feel free to reach out to me on [Twitter](https://twitter.com/mckaywrigley).
+4. Run the development server:
+   ```bash
+   npm run dev
+   ```
+
+5. Open [http://localhost:3000](http://localhost:3000).
+
+## Environment Variables
+
+See `.env.local.example` for required variables:
+- `OPENAI_API_KEY` - Your OpenAI API key
+
+## License
+
+MIT
