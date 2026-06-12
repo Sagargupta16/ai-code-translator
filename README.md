@@ -2,14 +2,17 @@
 
 An AI-powered code translation tool that converts code between programming languages using OpenAI's API. Built with Next.js and TypeScript.
 
+[Live Demo](https://ai-code-translator-delta-six.vercel.app)
+
 Originally forked from [mckaywrigley/ai-code-translator](https://github.com/mckaywrigley/ai-code-translator).
 
 ![AI Code Translator](./public/screenshot.png)
 
 ## Features
 
-- Translate code between 50+ programming languages
+- Translate code between 45+ programming languages
 - Syntax highlighting with CodeMirror
+- Model selection (GPT-3.5/GPT-4)
 - Real-time streaming translation
 - Clean, responsive UI with Tailwind CSS
 
