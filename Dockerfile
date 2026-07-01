@@ -10,10 +10,8 @@ COPY package.json package-lock.json ./
 # Install the dependencies
 RUN npm ci --omit=dev
 
-# Copy only the application source (not secrets, .env, node_modules)
-COPY public ./public
-COPY src ./src
-COPY next.config.* tsconfig.json ./
+# Copy the application source (.dockerignore excludes secrets, .env, node_modules)
+COPY . .
 
 # Run as non-root user for security
 USER node
