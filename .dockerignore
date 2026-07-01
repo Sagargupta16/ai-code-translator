@@ -1,5 +1,8 @@
 node_modules
 .git
 .env
+.env.*
+!.env.local.example
+.next
 dist
 # v1
