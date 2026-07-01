@@ -16,8 +16,8 @@ COPY . .
 # Run as non-root user for security
 USER node
 
-# Expose the port the app will run on
-EXPOSE 3001
+# Expose the port the app will run on (Next.js defaults to 3000)
+EXPOSE 3000
 
 # Start the application
 CMD ["npm", "run", "dev"]
