@@ -12,13 +12,13 @@ export default function Home() {
   const [outputLanguage, setOutputLanguage] = useState<string>('Python');
   const [inputCode, setInputCode] = useState<string>('');
   const [outputCode, setOutputCode] = useState<string>('');
-  const [model, setModel] = useState<OpenAIModel>('gpt-3.5-turbo');
+  const [model, setModel] = useState<OpenAIModel>('gpt-5-mini');
   const [loading, setLoading] = useState<boolean>(false);
   const [hasTranslated, setHasTranslated] = useState<boolean>(false);
   const [apiKey, setApiKey] = useState<string>('');
 
   const handleTranslate = async () => {
-    const maxCodeLength = model === 'gpt-3.5-turbo' ? 6000 : 12000;
+    const maxCodeLength = model === 'gpt-5-mini' ? 6000 : 12000;
 
     if (!apiKey) {
       alert('Please enter an API key.');

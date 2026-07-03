@@ -12,7 +12,7 @@ Originally forked from [mckaywrigley/ai-code-translator](https://github.com/mcka
 
 - Translate code between 45+ programming languages
 - Syntax highlighting with CodeMirror
-- Model selection (GPT-3.5/GPT-4)
+- Model selection (OpenAI GPT models, configurable)
 - Real-time streaming translation
 - Clean, responsive UI with Tailwind CSS
 

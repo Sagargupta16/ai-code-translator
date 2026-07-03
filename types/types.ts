@@ -1,4 +1,4 @@
-export type OpenAIModel = 'gpt-3.5-turbo' | 'gpt-4';
+export type OpenAIModel = 'gpt-5-mini' | 'gpt-5.2';
 
 export interface TranslateBody {
   inputLanguage: string;

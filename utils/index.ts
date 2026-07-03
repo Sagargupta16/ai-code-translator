@@ -1,9 +1,5 @@
 import endent from 'endent';
-import {
-  createParser,
-  ParsedEvent,
-  ReconnectInterval,
-} from 'eventsource-parser';
+import { createParser, EventSourceMessage } from 'eventsource-parser';
 
 const createPrompt = (
   inputLanguage: string,
@@ -91,7 +87,6 @@ export const OpenAIStream = async (
     body: JSON.stringify({
       model,
       messages: [system],
-      temperature: 0,
       stream: true,
     }),
   });
@@ -111,27 +106,25 @@ export const OpenAIStream = async (
 
   const stream = new ReadableStream({
     async start(controller) {
-      const onParse = (event: ParsedEvent | ReconnectInterval) => {
-        if (event.type === 'event') {
-          const data = event.data;
+      const onEvent = (event: EventSourceMessage) => {
+        const data = event.data;
 
-          if (data === '[DONE]') {
-            controller.close();
-            return;
-          }
+        if (data === '[DONE]') {
+          controller.close();
+          return;
+        }
 
-          try {
-            const json = JSON.parse(data);
-            const text = json.choices[0].delta.content;
-            const queue = encoder.encode(text);
-            controller.enqueue(queue);
-          } catch (e) {
-            controller.error(e);
-          }
+        try {
+          const json = JSON.parse(data);
+          const text = json.choices[0].delta.content;
+          const queue = encoder.encode(text);
+          controller.enqueue(queue);
+        } catch (e) {
+          controller.error(e);
         }
       };
 
-      const parser = createParser(onParse);
+      const parser = createParser({ onEvent });
 
       for await (const chunk of res.body as any) {
         parser.feed(decoder.decode(chunk));

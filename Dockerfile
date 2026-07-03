@@ -18,7 +18,7 @@ COPY public ./public
 COPY styles ./styles
 COPY types ./types
 COPY utils ./utils
-COPY next.config.js postcss.config.js tailwind.config.js tsconfig.json ./
+COPY next.config.js postcss.config.js tsconfig.json ./
 
 # Run as non-root user for security
 USER node
