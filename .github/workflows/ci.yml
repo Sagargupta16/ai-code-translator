@@ -17,5 +17,8 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run lint
+      # next-env.d.ts is gitignored and carries the `next` type reference that
+      # declares `*.css` side-effect imports. TS 6 checks those imports, so tsc
+      # must run after next has generated the file.
+      - run: npx next build
       - run: npx tsc --noEmit
-      - run: npm run build
