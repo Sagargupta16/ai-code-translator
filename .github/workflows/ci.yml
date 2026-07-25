@@ -6,6 +6,9 @@ on:
   pull_request:
     branches: [main]
 
+permissions:
+  contents: read
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -15,10 +18,12 @@ jobs:
         with:
           node-version: 24
           cache: npm
+      # sharp and unrs-resolver need their install scripts, so no --ignore-scripts.
       - run: npm ci
       - run: npm run lint
       # next-env.d.ts is gitignored and carries the `next` type reference that
       # declares `*.css` side-effect imports. TS 6 checks those imports, so tsc
-      # must run after next has generated the file.
-      - run: npx next build
-      - run: npx tsc --noEmit
+      # must run after next has generated the file. Both run from the local
+      # node_modules binaries, never via npx, which can fetch on demand.
+      - run: ./node_modules/.bin/next build
+      - run: ./node_modules/.bin/tsc --noEmit
