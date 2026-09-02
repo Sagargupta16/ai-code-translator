@@ -1,6 +1,6 @@
 {
   "name": "code-translate",
-  "version": "0.1.0",
+  "version": "1.2.1",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -19,7 +19,12 @@
     "react-dom": "19.2.8"
   },
   "overrides": {
-    "postcss": "^8.5.10"
+    "postcss": "^8.5.10",
+    "nanoid": "^3.3.18",
+    "js-yaml": "^4.3.1",
+    "sharp": "^0.35.0",
+    "brace-expansion@1": "^1.1.18",
+    "brace-expansion@5": "^5.0.9"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.3.2",
